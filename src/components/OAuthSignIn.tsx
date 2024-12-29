@@ -5,9 +5,12 @@ import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
 import { signIn } from "@/lib/auth-client";
+import { useState } from "react";
 
 export const OAuthSignIn = () => {
+  const [isPending, setIsPending] = useState(false);
   const handleOAuthSignIn = async (provider: "google" | "github") => {
+    setIsPending(true)
     const { error } = await signIn.social({
       provider,
       callbackURL: "/profile",
@@ -16,11 +19,13 @@ export const OAuthSignIn = () => {
     if (error) {
       toast.error(error.message || "Something went wrong");
     }
+
+    setIsPending(false)
   };
 
   return (
-    <div className="grid grid-cols-2 gap-2">
-      <Button onClick={() => handleOAuthSignIn("google")}>
+    <div className="grid grid-cols gap-2 ">
+      <Button onClick={() => handleOAuthSignIn("google")} disabled={isPending}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="text-background"
@@ -32,10 +37,10 @@ export const OAuthSignIn = () => {
         <span>Google</span>
       </Button>
 
-      <Button onClick={() => handleOAuthSignIn("github")}>
+      {/* <Button onClick={() => handleOAuthSignIn("github")}>
         <GithubIcon className="size-4" />
         <span>GitHub </span>
-      </Button>
+      </Button> */}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import postgres from "postgres";
 import * as schema from "@/lib/db/schema";
 
 dotenv.config({
-  path: ".env.local",
+  path: ".env",
 });
 
 const dbUrl = process.env.POSTGRES_URL;

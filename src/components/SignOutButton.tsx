@@ -6,10 +6,14 @@ import { Button } from "@/components/ui/button";
 
 import { signOut } from "@/lib/auth-client";
 
+import { useState } from "react";
+
 export const SignOutButton = () => {
+  const [isPending, setIsPending] = useState(false);
   const router = useRouter();
 
   const handleSignOut = () => {
+    setIsPending(true);
     signOut({
       fetchOptions: {
         onSuccess: () => {
@@ -20,7 +24,7 @@ export const SignOutButton = () => {
   };
 
   return (
-    <Button size="sm" onClick={handleSignOut}>
+    <Button size="sm" onClick={handleSignOut} disabled={isPending}>
       Sign Out
     </Button>
   );

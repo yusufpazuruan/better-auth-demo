@@ -9,7 +9,8 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "npx drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "install": "npm ci --legacy-peer-deps"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -25,7 +26,8 @@
     "drizzle-orm": "^0.36.3",
     "input-otp": "^1.4.1",
     "lucide-react": "^0.460.0",
-    "next": "15.0.3",
+    "next": "15.0.4",
+    "nextjs-toploader": "^3.7.15",
     "postgres": "^3.4.5",
     "qrcode.react": "^4.1.0",
     "react": "19.0.0-rc-66855b96-20241106",

@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import { defineConfig, type Config } from "drizzle-kit";
 
 dotenv.config({
-  path: ".env.local",
+  path: ".env",
 });
 
 const dbUrl = process.env.POSTGRES_URL;
