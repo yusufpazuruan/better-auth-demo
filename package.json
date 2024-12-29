@@ -9,8 +9,7 @@
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "npx drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio",
-    "install": "npm ci --legacy-peer-deps"
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -23,7 +22,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "drizzle-orm": "^0.36.3",
+    "drizzle-orm": "^0.38.3",
     "input-otp": "^1.4.1",
     "lucide-react": "^0.460.0",
     "next": "15.0.4",
